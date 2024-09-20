@@ -1,0 +1,14 @@
+.combo {
+    > * {
+        position: relative;
+
+        &:not([style*="background-"]) + *:not([style*="background-"]) {
+            padding-top: 0;
+
+            .content,
+            .accent {
+                padding-top: 0;
+            }
+        }
+    }
+}

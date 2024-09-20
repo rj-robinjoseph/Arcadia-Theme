@@ -1,0 +1,284 @@
+/**
+ * This sets a baseline for all Slick based blocks; Avoid editing.
+ */
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+}
+
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+
+    [dir="rtl"] & {
+        float: right;
+    }
+
+    img {
+        display: block;
+    }
+
+    &.slick-loading img {
+        display: none;
+    }
+
+    display: none;
+
+    &.dragging img {
+        pointer-events: none;
+    }
+
+    .slick-initialized & {
+        display: block;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+
+    .slick-vertical & {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+}
+
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+.slick-list {
+    .slick-loading & {
+        background: #fff url(img/ajax-loader.gif) center center no-repeat;
+    }
+}
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 50%;
+    display: block;
+    padding: 0;
+    height: 20px;
+    width: 20px;
+    line-height: 0;
+    font-size: 0;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+    border: none;
+    transform: translate(0, -50%);
+
+    &:focus {
+        top: calc(50% - 1px);
+
+        .slick-prev-icon,
+        .slick-next-icon {
+            color: orange;
+            font-size: 28px;
+            margin-left: -2px;
+        }
+    }
+
+    &.slick-disabled {
+        cursor: default;
+    }
+
+    .slick-prev-icon,
+    .slick-next-icon {
+        display: block;
+        color: black;
+        font-family: $font-family-icons;
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+}
+
+.slick-prev {
+    left: -25px;
+
+    [dir="rtl"] & {
+        left: auto;
+        right: -25px;
+    }
+
+    .slick-prev-icon {
+        &:before {
+            content: "\f053";
+
+            [dir="rtl"] & {
+                content: "\f054";
+            }
+        }
+    }
+}
+
+.slick-next {
+    right: -25px;
+
+    [dir="rtl"] & {
+        left: -25px;
+        right: auto;
+    }
+
+    .slick-next-icon {
+        &:before {
+            content: "\f054";
+
+            [dir="rtl"] & {
+                content: "\f053";
+            }
+        }
+    }
+}
+
+.slick-dotted {
+    padding-bottom: 2rem;
+}
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem 0;
+    margin: 0;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+
+    li {
+        position: relative;
+        margin: 0 0.25rem;
+        padding: 0;
+
+        button {
+            display: block;
+            color: transparent;
+            border: 0;
+            background: $ui-secondary;
+            cursor: pointer;
+            width: 0.5rem;
+            height: 0.5rem;
+            overflow: hidden;
+            padding: 0;
+            border-radius: 999rem;
+
+            &:focus {
+                background: orange;
+            }
+        }
+
+        &.slick-active {
+            button {
+                background: black;
+
+                &:focus {
+                    background: orange;
+                }
+            }
+        }
+    }
+}
+
+.slick-sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
+.slick-autoplay-toggle-button {
+    display: none;
+    position: absolute;
+    left: 5px;
+    bottom: -32px;
+    z-index: 10;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: black;
+
+    &:focus {
+        color: orange;
+    }
+
+    .slick-pause-icon:before {
+        content: "\f04c";
+        width: 20px;
+        height: 20px;
+        font-family: $font-family-icons;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .slick-play-icon:before {
+        content: "\f04b";
+        width: 20px;
+        height: 20px;
+        font-family: $font-family-icons;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 20px;
+        text-align: center;
+    }
+}

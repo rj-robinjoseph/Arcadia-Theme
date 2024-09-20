@@ -1,0 +1,50 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &.icon-after {
+        .far {
+            margin-left: 0.5em;
+            order: 1;
+        }
+    }
+
+    &.icon-before {
+        .far {
+            margin-right: 0.5em;
+        }
+    }
+
+    &.btn-white {
+        background: white;
+        color: black;
+        border: 0.125rem solid white;
+
+        &:hover {
+            background: black;
+            color: white;
+            border-color: black;
+        }
+    }
+
+    &.btn-black {
+        background: black;
+        color: white;
+        border: 0.125rem solid black;
+
+        &:hover {
+            background: white;
+            color: black;
+            border-color: white;
+        }
+    }
+
+    .btn-label {
+        line-height: 1em;
+    }
+}

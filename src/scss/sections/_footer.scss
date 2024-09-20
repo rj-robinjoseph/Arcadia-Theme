@@ -1,0 +1,39 @@
+.footer{
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+
+    .footer-container {
+        display: flex;
+        justify-content: center;
+
+        @include breakpoint(to-tablet){
+            flex-direction: column;
+        }
+
+        .emergency-contacts{
+            text-align: right;
+            margin-right: 15px;
+            text-decoration: none;
+
+            @include breakpoint(to-tablet){
+                text-align: center;
+            }
+
+            ul{
+                li{
+                    list-style: none;
+                }
+            }
+        }
+
+        .address{
+            text-align: left;
+            margin-left: 15px;
+            @include breakpoint(to-tablet){
+                text-align: center;
+            }
+        }
+}
+}

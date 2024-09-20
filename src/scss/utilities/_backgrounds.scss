@@ -1,0 +1,52 @@
+.bg-cover {
+    background-size: cover;
+}
+
+.bg-no-repeat {
+    background-repeat: no-repeat;
+}
+
+.bg-pos-center {
+    background-position: center center;
+}
+
+.bg-pos-top {
+    background-position: center top;
+}
+
+.bg-pos-bottom {
+    background-position: center bottom;
+}
+
+.bg-pos-right {
+    background-position: right center;
+}
+
+.bg-pos-left {
+    background-position: left center;
+}
+
+.bg-pos-top-left {
+    background-position: left top;
+}
+
+.bg-pos-top-right {
+    background-position: right top;
+}
+
+.bg-pos-bottom-left {
+    background-position: left bottom;
+}
+
+.bg-pos-bottom-right {
+    background-position: right bottom;
+}
+
+.bg-pos-fixed {
+    background-position: center top;
+    background-attachment: fixed;
+
+    @supports (-webkit-overflow-scrolling: touch) {
+        background-attachment: scroll;
+    }
+}

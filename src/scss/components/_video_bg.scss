@@ -1,0 +1,12 @@
+.video-bg {
+    overflow: hidden;
+    @include pos();
+    @include box(100%);
+    z-index: 1;
+
+    video {
+        @include centered();
+        min-width: 100%;
+        min-height: 100%;
+    }
+}

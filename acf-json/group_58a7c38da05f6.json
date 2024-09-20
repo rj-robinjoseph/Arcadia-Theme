@@ -1,0 +1,265 @@
+{
+    "key": "group_58a7c38da05f6",
+    "title": "Block Options",
+    "fields": [
+        {
+            "key": "field_58a7c39ae0ffb",
+            "label": "Options",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58a7c3b4e0ffc",
+            "label": "Block ID",
+            "name": "block_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "#",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58a7c3c6e0ffd",
+            "label": "Visibility",
+            "name": "visibility",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "enable": "Enabled",
+                "disable": "Disabled",
+                "schedule": "Scheduled"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_58a7c406e0ffe",
+            "label": "Visible From",
+            "name": "visible_from",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a7c3c6e0ffd",
+                        "operator": "==",
+                        "value": "schedule"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y g:i a",
+            "return_format": "Y-m-d H:i:s",
+            "first_day": 0
+        },
+        {
+            "key": "field_58a7c481e0fff",
+            "label": "Visible Until",
+            "name": "visible_until",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a7c3c6e0ffd",
+                        "operator": "==",
+                        "value": "schedule"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y g:i a",
+            "return_format": "Y-m-d H:i:s",
+            "first_day": 0
+        },
+        {
+            "key": "field_5cac0a3512111",
+            "label": "Hide on",
+            "name": "class_hide_on",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "hide-mobile": "Mobile (< 480)",
+                "hide-phablet": "Phablet (480 - 767)",
+                "hide-tablet": "Tablet (768 - 1023)",
+                "hide-desktop": "All Desktop (> 1023)",
+                "hide-desktop-sml": "Desktop (1024 - 1279)",
+                "hide-desktop-mid": "Desktop (1280 - 1479)",
+                "hide-desktop-lrg": "Desktop (> 1480)"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_59486376fc2dd",
+            "label": "Friendly Title",
+            "name": "friendly_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 50
+        },
+        {
+            "key": "field_591e5d9f0df9c",
+            "label": "Colour Scheme",
+            "name": "class_colour_scheme",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "null": "Inherit",
+                "scheme-dark": "Dark",
+                "scheme-light": "Light"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_61ac2a7e31a3a",
+            "label": "Padding Top",
+            "name": "class_padding_top",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "pt-none": "None",
+                "pt-small": "Small",
+                "pt-normal": "Normal",
+                "pt-medium": "Medium",
+                "pt-large": "Large"
+            },
+            "default_value": "pt-normal",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_61ac2aa531a3b",
+            "label": "Padding Bottom",
+            "name": "class_padding_bottom",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "pb-none": "None",
+                "pb-small": "Small",
+                "pb-normal": "Normal",
+                "pb-medium": "Medium",
+                "pb-large": "Large"
+            },
+            "default_value": "pb-normal",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "modified": 1638673120
+}

@@ -1,0 +1,41 @@
+{
+    "key": "group_59487a57bd923",
+    "title": "Widget Display",
+    "fields": [
+        {
+            "key": "field_594883992f7ec",
+            "label": "Page List",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<ul class=\"page-list\"><li>Not Assigned<\/li><\/ul>",
+            "new_lines": "",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "widget"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1497928007
+}

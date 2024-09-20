@@ -1,0 +1,35 @@
+$max-width: 1400px;
+$mobile-max: 479px;
+$phablet-max: 767px;
+$tablet-max: 1023px;
+$desktop-sml-max: 1279px;
+$desktop-mid-max: 1479px;
+
+$phablet-min: $mobile-max + 1; // 480
+$tablet-min: $phablet-max + 1; // 768
+$desktop-sml-min: $tablet-max + 1; // 1024
+$desktop-mid-min: $desktop-sml-max + 1; // 1280
+$desktop-lrg-min: $desktop-mid-max + 1; // 1480
+
+$breakpoints: (
+    mobile: createBreakpoint(0, $mobile-max),
+    phablet: createBreakpoint($phablet-min, $phablet-max),
+    tablet: createBreakpoint($tablet-min, $tablet-max),
+    desktop: createBreakpoint($desktop-sml-min),
+    desktop-sml: createBreakpoint($desktop-sml-min, $desktop-sml-max),
+    desktop-mid: createBreakpoint($desktop-mid-min, $desktop-mid-max),
+    desktop-lrg: createBreakpoint($desktop-lrg-min),
+
+    to-mobile: createBreakpoint(0, $mobile-max),
+    to-phablet: createBreakpoint(0, $phablet-max),
+    to-tablet: createBreakpoint(0, $tablet-max),
+    to-desktop-sml: createBreakpoint(0, $desktop-sml-max),
+    to-desktop-mid: createBreakpoint(0, $desktop-mid-max),
+
+    from-phablet: createBreakpoint($phablet-min),
+    from-tablet: createBreakpoint($tablet-min),
+    from-desktop: createBreakpoint($desktop-sml-min),
+    from-desktop-sml: createBreakpoint($desktop-sml-min),
+    from-desktop-mid: createBreakpoint($desktop-mid-min),
+    from-desktop-lrg: createBreakpoint($desktop-lrg-min)
+);

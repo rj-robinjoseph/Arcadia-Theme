@@ -1,0 +1,59 @@
+/*!
+Theme Name: Arcadia
+Theme URI: http://shout-media.ca
+Description: Custom WordPress theme
+Author: Shout! Media
+Author URI: http://shout-media.ca
+Version: 5.0
+*/
+
+@import "helpers/functions";
+@import "helpers/mixins";
+
+@import "variables/breakpoints";
+@import "variables/colours";
+@import "variables/fonts";
+
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/brands";
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/regular";
+
+@import "base/normalize";
+@import "base/defaults";
+@import "base/typography";
+@import "base/print";
+@import "base/font_families";
+@import "base/animation";
+
+@import "utilities/backgrounds";
+@import "utilities/colours";
+@import "utilities/text";
+@import "utilities/visibility";
+@import "utilities/titles";
+@import "utilities/padding";
+
+@import "components/buttons";
+@import "components/form_elements";
+@import "components/skiplink";
+@import "components/video_bg";
+@import "components/slick";
+@import "components/slider";
+/* components */
+
+@import "sections/blog";
+@import "sections/footer";
+@import "sections/header";
+@import "sections/main_content";
+@import "sections/page_not_found";
+@import "sections/mobile_nav";
+@import "sections/banner_default";
+@import "sections/banner_home";
+
+@import "blocks/accent_image";
+@import "blocks/basic_content";
+@import "blocks/combo";
+@import "blocks/content_grid";
+@import "blocks/content_with_sidebar";
+@import "blocks/hero_block";
+@import "blocks/map";
+@import "blocks/columns";

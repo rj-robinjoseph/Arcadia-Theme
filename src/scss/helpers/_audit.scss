@@ -1,0 +1,15 @@
+.show-accessibility {
+    img[alt=""],
+    img:not([alt]),
+    a[href^="#"],
+    a[href=""] {
+        // outline: 0.25rem dashed #c00;
+        // outline-offset: 0.25rem;
+    }
+
+    .map {
+        img {
+            outline: none;
+        }
+    }
+}

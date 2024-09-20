@@ -1,0 +1,24 @@
+/// Create a breakpoint
+/// @param string $fromThisSize Lower limit in pixels
+/// @param string $uptoThisSize Upper limit in pixels
+/// @return string Media query
+@function createBreakpoint($fromThisSize: "", $uptoThisSize: ""){
+    $query: "";
+
+    @if $fromThisSize != "" or $uptoThisSize != "" {
+
+        @if $fromThisSize != "" and $fromThisSize != 0  {
+            $query: $query + "(min-width:#{$fromThisSize})";
+        }
+
+        @if ($fromThisSize != "" and $fromThisSize != 0) and $uptoThisSize != "" {
+            $query: $query + " and ";
+        }
+
+        @if $uptoThisSize != "" {
+            $query: $query + "(max-width:#{$uptoThisSize})";
+        }
+
+        @return unquote($query);
+    }
+}

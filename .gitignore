@@ -1,0 +1,25 @@
+# Theme SASS
+style.css
+editor.css
+admin.css
+audit.css
+
+# Theme JS
+js/main.js
+js/main.js.map
+
+# OS Garbage
+.DS_Store
+thumbs.db
+
+# Node Modules
+node_modules/*
+
+# Dreamweaver
+dwsync.xml
+
+# Update file
+updated.txt
+
+# Project config
+ftpsync.settings

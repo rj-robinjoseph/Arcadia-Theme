@@ -1,0 +1,39 @@
+.pt-none {
+    padding-top: 0;
+}
+
+.pt-small {
+    @include scaleAttr(padding-top, 3rem, 0.4rem);
+}
+
+.pt-normal {
+    @include scaleAttr(padding-top, 4rem, 0.4rem);
+}
+
+.pt-medium {
+    @include scaleAttr(padding-top, 6rem, 0.4rem);
+}
+
+.pt-large {
+    @include scaleAttr(padding-top, 8rem, 0.4rem);
+}
+
+.pb-none {
+    padding-bottom: 0;
+}
+
+.pb-small {
+    @include scaleAttr(padding-bottom, 3rem, 0.4rem);
+}
+
+.pb-normal {
+    @include scaleAttr(padding-bottom, 4rem, 0.4rem);
+}
+
+.pb-medium {
+    @include scaleAttr(padding-bottom, 6rem, 0.4rem);
+}
+
+.pb-large {
+    @include scaleAttr(padding-bottom, 8rem, 0.4rem);
+}

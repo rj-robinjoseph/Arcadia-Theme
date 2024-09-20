@@ -1,0 +1,29 @@
+[class*="title-"] {
+    font-weight: 400;
+    line-height: 1em;
+    font-family: $font-family-secondary;
+}
+
+.title-xsmall {
+    @include scaleAttr(font-size, 2rem, 0.125rem, 1.25rem);
+}
+
+.title-small {
+    @include scaleAttr(font-size, 2.25rem, 0.25rem, 1.25rem);
+}
+
+.title-normal {
+    @include scaleAttr(font-size, 2.5rem, 0.25rem, 1.25rem);
+}
+
+.title-medium {
+    @include scaleAttr(font-size, 2.75rem, 0.25rem, 1.25rem);
+}
+
+.title-large {
+    @include scaleAttr(font-size, 3rem, 0.25rem, 1.25rem);
+}
+
+.title-xlarge {
+    @include scaleAttr(font-size, 3.25rem, 0.25rem, 1.25rem);
+}

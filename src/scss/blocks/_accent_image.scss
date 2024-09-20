@@ -1,0 +1,108 @@
+.accent-image {
+    margin-bottom: 50px;
+    .row {
+        height: 500px;
+        width: 100vw;
+        display: flex;
+        color: $ui-scheme-light-text;
+
+        img{
+            width: 50vw;
+            object-fit: cover;
+        }
+
+        .contents{
+            // flex: 50%;
+            width: 50vw;
+            background-color: $site-blue;
+            padding: 50px;
+
+            h2{
+                font-family: $font-family-secondary;
+                font-size: $font-size-secondary-heading;
+                font-weight: 500;
+                padding-bottom: 20px;
+            }
+
+            .sub_contents{
+                margin-top: 40px;
+                .text-column-items{
+                    margin-top: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    @include breakpoint(to-mobile){
+                        flex-wrap: wrap;
+                        padding: 20px;
+                    }
+
+                    .text-column-item{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        
+
+                        img{
+                            width: 80px;
+                            height: 80px;
+                        }
+
+                        h1{
+                            font-family: $font-family-secondary;
+                        }
+
+                        p{
+                            font-family: $font-family-body;
+                            font-size: 25px;
+                            margin: unset;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.align-right {
+        .accent {
+            order: 1;
+            padding-right: 0;
+        }
+
+        .content {
+            padding-left: 0;
+        }
+    }
+
+    &.align-left {
+        .accent {
+            padding-left: 0;
+        }
+
+        .content {
+            padding-right: 0;
+        }
+    }
+
+    .content {
+        flex: 8;
+    }
+
+    .accent {
+        flex: 4;
+        text-align: center;
+    }
+
+    .content,
+    .accent {
+        padding: 1rem 0;
+
+        @include breakpoint(from-desktop) {
+            padding: 0 1rem;
+        }
+
+        @include breakpoint(from-desktop-mid) {
+            padding: 0 2rem;
+        }
+    }
+}

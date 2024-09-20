@@ -1,0 +1,35 @@
+.posts-listing {
+    .post {
+        padding: 0.25rem 0;
+
+        &:not(:first-child) {
+            margin-top: 1.5rem;
+        }
+    }
+
+    .posted {
+        border-top: 0.125rem solid black;
+        border-bottom: 0.125rem solid black;
+        line-height: 1rem;
+        padding: 0.75rem 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 1.5rem;
+    }
+}
+
+.posts-sidebar {
+    ul {
+        margin: 0;
+        padding-left: 2rem;
+    }
+
+    .block-title:not(:first-child) {
+        margin-top: 1.5rem;
+    }
+}

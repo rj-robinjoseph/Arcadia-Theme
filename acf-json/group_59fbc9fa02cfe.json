@@ -1,0 +1,103 @@
+{
+    "key": "group_59fbc9fa02cfe",
+    "title": "Title",
+    "fields": [
+        {
+            "key": "field_59fbca0f84eef",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.3333",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59fbca2284ef0",
+            "label": "Alignment",
+            "name": "title_alignment",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.3333",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "text-inherit": "Inherit",
+                "text-left": "Left",
+                "text-center": "Center",
+                "text-right": "Right"
+            },
+            "default_value": [
+                "text-inherit"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5e63f1b8bd3f3",
+            "label": "Size",
+            "name": "title_size",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.3333",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "title-xsmall": "XSmall",
+                "title-small": "Small",
+                "title-normal": "Normal",
+                "title-medium": "Medium",
+                "title-large": "Large",
+                "title-xlarge": "XLarge"
+            },
+            "default_value": [
+                "title-normal"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1583609160
+}

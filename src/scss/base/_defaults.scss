@@ -1,0 +1,163 @@
+html,
+button,
+input,
+select,
+textarea {
+    color: $default-text-color;
+    overflow-x: hidden;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+
+    &.alignright {
+        float: right;
+        margin-left: 15px;
+    }
+
+    &.alignleft {
+        float: left;
+        margin-right: 15px;
+    }
+
+    &.aligncenter {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+nav ul {
+    @include lireset();
+}
+
+a {
+    text-decoration: none;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow, filter, backdrop-filter;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
+
+    &:not([class]) {
+        color: #2678ab;
+    }
+}
+
+input[type="search"],
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.container {
+    width: $max-width;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+
+    @include breakpoint(to-desktop-mid) {
+        width: 1200px;
+    }
+
+    @include breakpoint(to-desktop-sml) {
+        width: 960px;
+    }
+
+    @include breakpoint(to-tablet) {
+        width: 720px;
+    }
+
+    @include breakpoint(to-phablet) {
+        width: 100%;
+        padding: 0 1.25rem;
+    }
+}
+
+.overlay {
+    @include cover();
+    z-index: 2;
+}
+
+@include breakpoint(mobile) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+@include breakpoint(phablet) {
+    .hide-phablet {
+        display: none !important;
+    }
+}
+
+@include breakpoint(tablet) {
+    .hide-tablet {
+        display: none !important;
+    }
+}
+
+@include breakpoint(desktop) {
+    .hide-desktop {
+        display: none !important;
+    }
+}
+
+@include breakpoint(desktop-sml) {
+    .hide-desktop-sml {
+        display: none !important;
+    }
+}
+
+@include breakpoint(desktop-mid) {
+    .hide-desktop-mid {
+        display: none !important;
+    }
+}
+
+@include breakpoint(desktop-lrg) {
+    .hide-desktop-lrg {
+        display: none !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}

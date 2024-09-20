@@ -1,0 +1,265 @@
+{
+    "key": "group_57b4b470e9d29",
+    "title": "Block Background",
+    "fields": [
+        {
+            "key": "field_57b4b47918ff7",
+            "label": "Background",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57b4b48318ff8",
+            "label": "Image",
+            "name": "bg_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_57b4b49418ff9",
+            "label": "Colour",
+            "name": "bg_colour",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 1,
+            "return_format": "string"
+        },
+        {
+            "key": "field_5968317ef368c",
+            "label": "Overlay Colour",
+            "name": "bg_overlay",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 1,
+            "return_format": "string"
+        },
+        {
+            "key": "field_647f4237c450b",
+            "label": "Size",
+            "name": "class_bg_size",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "bg-cover": "Cover",
+                "bg-tile": "Tile",
+                "bg-no-repeat": "Single Image \/ No Repeat"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5924cfded8b76",
+            "label": "Background Position",
+            "name": "class_bg_position",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "bg-pos-center": "Center",
+                "bg-pos-top": "Top",
+                "bg-pos-bottom": "Bottom",
+                "bg-pos-right": "Right",
+                "bg-pos-left": "Left",
+                "bg-pos-top-left": "Top Left",
+                "bg-pos-top-right": "Top Right",
+                "bg-pos-bottom-left": "Bottom Left",
+                "bg-pos-bottom-right": "Bottom Right",
+                "bg-pos-fixed": "Fixed",
+                "bg-pos-custom": "Custom"
+            },
+            "default_value": "bg-pos-center",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5924d24482ca4",
+            "label": "Background Position (X)",
+            "name": "bg_position_x",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5924cfded8b76",
+                        "operator": "==",
+                        "value": "bg-pos-custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "%",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5924d29982ca5",
+            "label": "Background Position (Y)",
+            "name": "bg_position_y",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5924cfded8b76",
+                        "operator": "==",
+                        "value": "bg-pos-custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "%",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_591cdef6b3380",
+            "label": "Video (MP4)",
+            "name": "bg_video_mp4",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_591cdf25b3381",
+            "label": "Video (WebM)",
+            "name": "bg_video_webm",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1686061874
+}

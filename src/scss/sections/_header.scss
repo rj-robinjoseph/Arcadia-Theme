@@ -1,0 +1,143 @@
+.header {
+    font-family: "Lato", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    padding: 1.5rem 0;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: transparent;
+
+    .menu-item {
+        position: relative;
+        margin: 0 1rem;
+
+        a {
+            display: block;
+            padding: 0.5rem 0;
+            color: white;
+        }
+
+        &:hover {
+            a {
+                color: black;
+            }
+
+            .sub-menu {
+                display: block;
+
+                .menu-item {
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .sub-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transition: all .3s ease-in-out;
+        background: $ui-subnav-bg;
+        min-width: 10rem;
+
+        .menu-item {
+            display: block;
+            margin: 0;
+
+            a {
+                color: white;
+                padding: 0.5rem 1rem;
+                white-space: nowrap;
+            }
+
+            &:hover {
+                a {
+                    border-bottom: none;
+                    background: black;
+                }
+            }
+        }
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .logo {
+        max-width: 200px;
+    }
+
+    .navs {
+        flex: 1;
+        justify-content: flex-end;
+        display: none;
+
+        .nav-items{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            nav{
+
+                .menu-navigation-container{
+                    .menu{
+                        li{
+                            font-size: 18px;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+
+            button{
+                margin-top: 10px;
+                padding: 10px 15px;
+                color: white;
+                background-color: black;
+                border-radius: 50px;
+                border: none;
+                cursor: pointer;
+            }
+        }
+        
+
+        @include break(from-desktop) {
+            display: flex;
+        }
+    }
+
+    .menu {
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
+        border-bottom: 1px solid white;
+    }
+
+    a {
+        color: inherit;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .social {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 0 0 0 1rem;
+        order: 1;
+
+        & > * {
+            margin: 0 1em 0 0;
+        }
+    }
+}

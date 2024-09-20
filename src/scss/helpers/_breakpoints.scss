@@ -1,0 +1,35 @@
+body.show-breakpoints {
+    &:after {
+        content: "mobile";
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+        background: rgba(0,0,0,0.85);
+        font-size: 0.825rem;
+        font-family: sans-serif;
+        z-index: 9999;
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+
+        @include breakpoint(from-phablet) {
+            content: "phablet";
+        }
+
+        @include breakpoint(from-tablet) {
+            content: "tablet";
+        }
+
+        @include breakpoint(from-desktop) {
+            content: "desktop";
+        }
+
+        @include breakpoint(from-desktop-mid) {
+            content: "desktop-mid";
+        }
+
+        @include breakpoint(from-desktop-lrg) {
+            content: "desktop-lrg";
+        }
+    }
+}

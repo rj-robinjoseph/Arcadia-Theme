@@ -1,0 +1,13 @@
+.skip-link {
+    position: absolute;
+    left: -100%;
+    background: transparentize(black, 0.3);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 0 0 6px 6px;
+
+    &:focus {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

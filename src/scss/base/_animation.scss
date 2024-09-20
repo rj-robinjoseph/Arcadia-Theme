@@ -1,0 +1,22 @@
+.animate-site .main-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li,
+    blockquote,
+    .btn,
+    .content-grid .item,
+    .frm_submit,
+    .frm_forms .form-field,
+    .accent-image .accent {
+        visibility: hidden;
+    }
+
+    .frm_forms .form-field.frm_none_container {
+        transform: none !important;
+    }
+}

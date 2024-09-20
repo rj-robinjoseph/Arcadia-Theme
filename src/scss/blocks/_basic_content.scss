@@ -1,0 +1,5 @@
+.basic-content {
+    @include scaleAttrs([padding-top, padding-bottom], 4rem, 0.4rem);
+    background: white;
+    color: black;
+}

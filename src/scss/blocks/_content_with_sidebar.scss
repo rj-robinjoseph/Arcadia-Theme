@@ -1,0 +1,67 @@
+.content-with-sidebar {
+    .container {
+        @include breakpoint(from-desktop) {
+            display: flex;
+        }
+    }
+
+    &.side-left {
+        .sidebar {
+            order: -1;
+            padding-left: 0;
+        }
+
+        .content {
+            padding-right: 0;
+        }
+    }
+
+    &.side-right {
+        .sidebar {
+            padding-right: 0;
+        }
+
+        .content {
+            padding-left: 0;
+        }
+    }
+
+    &.side-hidden {
+        .sidebar {
+            display: none;
+        }
+
+        .content {
+            padding: 0;
+        }
+    }
+
+    .content,
+    .sidebar {
+        padding: 1rem 0;
+
+        @include breakpoint(from-desktop) {
+            padding: 0 1rem;
+        }
+
+        @include breakpoint(from-desktop-mid) {
+            padding: 0 2rem;
+        }
+    }
+
+    .content {
+        flex: 8;
+
+        @include breakpoint(from-desktop-mid) {
+            flex: 9;
+        }
+    }
+
+    .sidebar {
+        flex: 4;
+
+        @include breakpoint(from-desktop-mid) {
+            flex: 3;
+        }
+    }
+}

@@ -1,0 +1,292 @@
+/// Clear formatting on lists
+@mixin lireset() {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/// Backwards compatibility
+/// @alias lireset
+@mixin ulreset() {
+    @include lireset();
+}
+
+/// Add font awesome icon to list
+/// @param string $icon Font Awesome Icon
+@mixin icon-list($icon) {
+    position: relative;
+    padding-left: 1.25em;
+
+    &:before {
+        font-family: $font-family-icons;
+        content: $icon;
+        @include pos();
+    }
+}
+
+/// Shorthand for generating a @font-face definition
+/// @param string $name   Font name
+/// @param string $file   [Font Name] File name within fonts
+/// @param string $weight Font weight
+/// @param string $style  Font Style
+@mixin fontface($name, $file: $name, $weight: normal, $style: normal) {
+    @font-face {
+        font-family: $name;
+        src: local('#{$file}'),
+             url('#{$fa-font-path}/#{$file}.woff2') format('woff2'),
+             url('#{$fa-font-path}/#{$file}.woff') format('woff');
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+
+/// Position an element
+@mixin pos($left: 0, $top: 0, $type: absolute, $right: null, $bottom: null) {
+    position: $type;
+
+    @if $bottom == null {
+        top: $top;
+    } @else {
+        bottom: $bottom;
+    }
+
+    @if $right == null {
+        left: $left;
+    } @else {
+        right: $right;
+    }
+}
+
+/// Fit to size of parent element
+@mixin cover() {
+    @include pos();
+    @include box(100%);
+}
+
+/// Absolutely center an element
+@mixin centered() {
+    @include pos(50%, 50%);
+    transform: translate(-50%, -50%);
+}
+
+/// Vertically alig an element
+@mixin valign() {
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/// Style text highlighting
+/// @param string $color Font Colour
+@mixin selection($color) {
+    ::-moz-selection {
+        background: $color;
+        text-shadow: none;
+    }
+    ::selection {
+        background: $color;
+        text-shadow: none;
+    }
+}
+
+/// Style input placeholders
+/// @content
+@mixin placeholder() {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+/// Apply an ellipsis overflow
+@mixin truncate() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/// Shortcut for applying width and height to an element
+/// @param float $width Element width
+/// @param float $height Element height
+@mixin box($width, $height: $width) {
+    @if unitless($width) {
+        $width: $width * 1px;
+    }
+
+    @if unitless($height) {
+        $height: $height * 1px;
+    }
+
+    width: $width;
+    height: $height;
+}
+
+/// Shortcut for making a circular element
+/// @param float $diameter Element size
+@mixin circle($diameter) {
+    @if unitless($diameter) {
+        $diameter: $diameter * 1px;
+    }
+
+    @include box($diameter, $diameter);
+    border-radius: $diameter;
+}
+
+/// Shortcut for targeting multiple headings
+/// @param integer $start [1] Start heading level
+/// @param integer $end [6] End heading level
+/// @content
+@mixin headings($start: 1, $end: 6) {
+    @for $i from $start through $end {
+        h#{$i} {
+            @content;
+        }
+    }
+}
+
+/// Add media query to element
+/// @param string $breakpoint Add breakpoint to media string
+/// @param string $resolution Add dpi to media string
+/// @param string $media-type Add additional supplied query types to media string
+/// @param string $media-feature Add additional supplied query features to media string
+@mixin breakpoint($breakpoint: "", $resolution: "", $media-type: "", $media-feature: "") {
+    $media: "";
+
+    // Add breakpoint to media string
+    @if $breakpoint != "" {
+        @if map-has-key($breakpoints, $breakpoint) {
+            $media: inspect(map-get($breakpoints, $breakpoint));
+        }
+    }
+
+    // Add dpi to media string
+    @if $resolution != "" {
+        $res-dpi: $resolution * 96;
+
+        @if $media != "" {
+            $media: $media + " and";
+        }
+
+        $media: $media + " all and (min-resolution: #{$res-dpi}dpi) ";
+    }
+
+    // Add additional supplied query types to media string
+    @if $media-type != "" {
+        @if $media != "" {
+            $media: $media + " and ";
+        }
+
+        $media: $media + $media-type;
+    }
+
+    // Add additional supplied query features to media string
+    @if $media-feature != "" {
+        @if $media != "" {
+            $media: $media + " and ";
+        }
+
+        $media: $media + "all and (" + $media-feature + ")";
+    }
+
+    @media #{$media} {
+        @content;
+    }
+}
+
+/// Breakpoint alias
+@mixin break($arguments...) {
+    @include breakpoint($arguments...) {
+        @content;
+    };
+}
+
+/// Background position
+/// @param string $size
+/// @param string $position
+/// @param string $repeat
+@mixin background($size: cover, $position: center center, $repeat: no-repeat) {
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
+}
+
+/// Adjust a single attribute across every breakpoint
+/// @param string $attr Attribute being scaled
+/// @param string $start Base desktop size
+/// @param string $step Size adjustment at each breakpoint
+/// @param string $min Minimum size requirements
+@mixin scaleAttr($attr, $start, $step, $min: 1rem) {
+    $breaks: (
+        0: mobile,
+        1: from-phablet,
+        2: from-tablet,
+        3: from-desktop-sml,
+        4: from-desktop-mid,
+        5: from-desktop-lrg
+    );
+
+    @for $i from 0 through 5 {
+        $size: $start - ($step * (5 - $i));
+
+        @if ($i == 0) {
+            @if ($size <= $min) {
+                $size: $min;
+            }
+
+            #{$attr}: $size;
+        } @else {
+            @if ($size > $min) {
+                @include breakpoint(map-get($breaks, $i)) {
+                    #{$attr}: $size;
+                }
+            }
+        }
+    }
+}
+
+/// Adjust a single attribute across every breakpoint
+/// @param list   $attr Attributes being scaled
+/// @param string $start Base desktop size
+/// @param string $step Size adjustment at each breakpoint
+/// @param string $min Minimum size requirements
+@mixin scaleAttrs($attrs, $start, $step, $min: 1rem) {
+    $breaks: (
+        0: mobile,
+        1: from-phablet,
+        2: from-tablet,
+        3: from-desktop-sml,
+        4: from-desktop-mid,
+        5: from-desktop-lrg
+    );
+
+    @for $i from 0 through 5 {
+        $size: $start - ($step * (5 - $i));
+
+        @if ($i == 0) {
+            @if ($size <= $min) {
+                $size: $min;
+            }
+
+            @each $attr in $attrs {
+                #{$attr}: $size;
+            }
+        } @else {
+            @if ($size > $min) {
+                @include breakpoint(map-get($breaks, $i)) {
+                    @each $attr in $attrs {
+                        #{$attr}: $size;
+                    }
+                }
+            }
+        }
+    }
+}
