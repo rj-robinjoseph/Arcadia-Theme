@@ -6,9 +6,17 @@
         display: flex;
         color: $ui-scheme-light-text;
 
+        @include breakpoint(to-tablet){
+            flex-direction: column;
+            height: unset;
+        }
+
         img{
             width: 50vw;
             object-fit: cover;
+            @include breakpoint(to-tablet){
+                width: 100vw;
+            }
         }
 
         .contents{
@@ -16,6 +24,10 @@
             width: 50vw;
             background-color: $site-blue;
             padding: 50px;
+
+            @include breakpoint(to-tablet){
+                width: 100vw;
+            }
 
             h2{
                 font-family: $font-family-secondary;

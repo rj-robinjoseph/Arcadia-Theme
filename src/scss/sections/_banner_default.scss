@@ -12,6 +12,10 @@
         display: flex;
         margin-top: 220px;
 
+        @include breakpoint(to-mobile){
+            margin-top: 150px;
+        }
+
         .text{
             text-align: left;
             color: white;

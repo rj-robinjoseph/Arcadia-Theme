@@ -51,10 +51,16 @@
 
         .column-1{
         width: 600px;
+        @include breakpoint(to-phablet){
+            width: unset;
+        }
         }
 
         .column-2{
             width: 600px;
+            @include breakpoint(to-phablet){
+                width: unset;
+            }
         }
     
     .title-normal{

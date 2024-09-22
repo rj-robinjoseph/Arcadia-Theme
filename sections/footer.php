@@ -7,15 +7,18 @@ $copyright = get_field('copyright', 'option');
     <div class="footer-container">
         <div class="emergency-contacts">
             <h6>Emergency Contact Numbers</h6>
-            <ul>
+            
                 <?php if( $emergency_contact ): ?>
+                    <p>
                     <?php foreach( $emergency_contact as $contact ): ?>
-                        <li><?php echo $contact['label']; ?>: <?php echo $contact['number']; ?></li>
+                        <?php echo $contact['label']; ?>: <?php echo $contact['number']; ?><br>
                     <?php endforeach; ?>
+                    </p>
+                    
                 <?php else: ?>
-                    <li>No emergency contacts found.</li>
+                    <p>No emergency contacts found.</p>
                 <?php endif; ?>
-            </ul>
+            
         </div>
 
         <div class="address">

@@ -1,8 +1,8 @@
 .slider {
     max-width: 600px !important;
 
-    @include breakpoint(to-mobile){
-        max-width: 400px !important;
+    @include breakpoint(to-phablet){
+        width: unset;
     }
 
     .slides{
@@ -36,8 +36,14 @@
 
 .slick-prev{
     left: 20px !important;
+    @include breakpoint(to-mobile){
+        left: 100px !important;
+    }
 }
 
 .slick-next{
     right: 20px !important;
+    @include breakpoint(to-mobile){
+        right: 100px !important;
+    }
 }

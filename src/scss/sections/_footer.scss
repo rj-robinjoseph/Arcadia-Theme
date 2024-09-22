@@ -15,16 +15,10 @@
         .emergency-contacts{
             text-align: right;
             margin-right: 15px;
-            text-decoration: none;
 
             @include breakpoint(to-tablet){
                 text-align: center;
-            }
-
-            ul{
-                li{
-                    list-style: none;
-                }
+                margin-right: 0;
             }
         }
 
@@ -33,6 +27,7 @@
             margin-left: 15px;
             @include breakpoint(to-tablet){
                 text-align: center;
+                margin-left: 0;
             }
         }
 }
