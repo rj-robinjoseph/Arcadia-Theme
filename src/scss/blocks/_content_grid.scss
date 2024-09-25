@@ -1,128 +1,126 @@
-.content{
-    margin-top: 670px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    .heading{
-        text-align: center;
-        color: $site-green;
-        font-size: $font-size-secondary-heading;
-        font-family: $font-family-secondary;
-        // margin-top: 80px;
+.content-grid {
+    padding-bottom: 10px;
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .heading{
+            text-align: center;
+            color: $site-green;
+            font-size: $font-size-secondary-heading;
+            font-family: $font-family-secondary;
+            margin-bottom: 60px;
+        }
+
+        .btn{
+            font-size: 25px;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 40px 0 80px 0;
+            cursor: pointer;
+            
+            .far{
+                display: none;
+            }
+        }
     }
 
-    .content-grid {
-        .container{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-evenly;
+    .items {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-            .btn{
-                font-size: 25px;
-                font-weight: 500;
-                text-transform: uppercase;
-                padding: 12px 24px;
-                border-radius: 50px;
-                text-decoration: none;
-                margin: 40px 0 80px 0;
-                cursor: pointer;
-                
-                .far{
-                    display: none;
-                }
+        @include breakpoint(to-tablet) {
+            // display: flex;
+            flex-wrap: wrap;
+        }
+
+        &.cols-auto .item {
+            @include breakpoint(from-tablet) {
+                flex: 1;
             }
         }
 
-        .items {
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            @include breakpoint(to-tablet) {
-                // display: flex;
-                flex-wrap: wrap;
+        &.cols-4 .item {
+            @include breakpoint(from-tablet) {
+                width: 50%;
             }
 
-            &.cols-auto .item {
-                @include breakpoint(from-tablet) {
-                    flex: 1;
-                }
-            }
-
-            &.cols-4 .item {
-                @include breakpoint(from-tablet) {
-                    width: 50%;
-                }
-
-                @include breakpoint(from-desktop) {
-                    width: 25%;
-                }
-            }
-
-            &.cols-3 .item {
-                @include breakpoint(from-tablet) {
-                    width: 50%;
-                }
-
-                @include breakpoint(from-desktop) {
-                    width: 33.3333%;
-                }
-            }
-
-            &.cols-2 .item {
-                @include breakpoint(from-tablet) {
-                    width: 50%;
-                }
+            @include breakpoint(from-desktop) {
+                width: 25%;
             }
         }
 
-        .item {
-            padding: 0.5rem 0;
-            height: 400px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-evenly;
-            box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.3);
-            margin: 0 50px;
-            border-radius: 30px;
+        &.cols-3 .item {
+            @include breakpoint(from-tablet) {
+                width: 50%;
+            }
 
-            @include breakpoint(to-tablet) {
-                padding: 0 1.25rem;
-                margin-bottom: 50px;
+            @include breakpoint(from-desktop) {
+                width: 33.3333%;
             }
         }
 
-        .round{
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-top: 30px;
+        &.cols-2 .item {
+            @include breakpoint(from-tablet) {
+                width: 50%;
+            }
         }
+    }
 
-        .thumbnail {
-            display: block;
-            margin: 0 auto 1.25rem auto;
-            object-fit: contain;
-            padding: 15px 10px 0;
-            @include box(100px);
-        }
+    .item {
+        padding: 0.5rem 0;
+        height: 400px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.3);
+        margin: 0 50px;
+        border-radius: 30px;
 
-        .label {
-            font-weight: 700;
+        @include breakpoint(to-tablet) {
+            padding: 0 1.25rem;
+            margin-bottom: 50px;
         }
+    }
 
-        button{
-            display: inline-block;
-            background-color: $default-text-color;
-            color: $ui-scheme-light-text;
-            font-family: $font-family-secondary;
-            
-        }
+    .round{
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-top: 30px;
+    }
+
+    .thumbnail {
+        display: block;
+        margin: 0 auto 1.25rem auto;
+        object-fit: contain;
+        padding: 15px 10px 0;
+        @include box(100px);
+    }
+
+    .label {
+        font-weight: 700;
+    }
+
+    p{
+        margin: 1rem 2rem;
+    }
+
+    button{
+        display: inline-block;
+        background-color: $default-text-color;
+        color: $ui-scheme-light-text;
+        font-family: $font-family-secondary;
+        
     }
 }
 

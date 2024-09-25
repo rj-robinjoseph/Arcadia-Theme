@@ -1,6 +1,3 @@
-/**
- * Slider
- */
 jQuery(function ($) {
     $("#slider-block").slick({
         speed: 300,
