@@ -6,6 +6,7 @@
             "key": "field_59d2f8318a47e",
             "label": "Type",
             "name": "link_type",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -19,7 +20,7 @@
                 "url": "URL",
                 "media": "File \/ Media"
             },
-            "default_value": [],
+            "default_value": false,
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -31,6 +32,7 @@
             "key": "field_5b80540b4868f",
             "label": "Link",
             "name": "link",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -54,6 +56,7 @@
             "key": "field_59d2f8318a75a",
             "label": "File",
             "name": "link_file",
+            "aria-label": "",
             "type": "file",
             "instructions": "",
             "required": 0,
@@ -93,7 +96,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 0,
+    "active": true,
     "description": "",
-    "modified": 1535138646
+    "show_in_rest": false,
+    "modified": 1727742680
 }

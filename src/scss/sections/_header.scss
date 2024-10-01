@@ -1,14 +1,19 @@
+.home .header {
+    background-color: transparent !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
 .header {
     font-family: "Lato", system-ui;
     font-weight: 400;
     font-style: normal;
     padding: 1.5rem 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
+    position: relative;
     z-index: 99;
-    background-color: transparent;
+    width: 100%;
+    background-color: $site-green;
 
     .menu-item {
         position: relative;
@@ -17,12 +22,12 @@
         a {
             display: block;
             padding: 0.5rem 0;
-            color: white;
+            color: $ui-scheme-light-text;
         }
 
         &:hover {
             a {
-                color: black;
+                color: $ui-scheme-dark-text;
             }
 
             .sub-menu {
@@ -30,7 +35,7 @@
 
                 .menu-item {
                     a {
-                        color: white;
+                        color: $ui-scheme-light-text;
                     }
                 }
             }
@@ -51,7 +56,7 @@
             margin: 0;
 
             a {
-                color: white;
+                color: $ui-scheme-light-text;
                 padding: 0.5rem 1rem;
                 white-space: nowrap;
             }
@@ -59,7 +64,7 @@
             &:hover {
                 a {
                     border-bottom: none;
-                    background: black;
+                    background: $ui-scheme-dark-text;
                 }
             }
         }
@@ -101,8 +106,8 @@
             button{
                 margin-top: 10px;
                 padding: 10px 15px;
-                color: white;
-                background-color: black;
+                color: $ui-scheme-light-text;
+                background-color: $ui-scheme-dark-text;
                 border-radius: 50px;
                 border: none;
                 cursor: pointer;
@@ -119,14 +124,14 @@
         display: flex;
         justify-content: flex-end;
         flex: 1;
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid $ui-scheme-light-text;
     }
 
     a {
         color: inherit;
 
         &:hover {
-            color: white;
+            color: $ui-scheme-light-text;
         }
     }
 
